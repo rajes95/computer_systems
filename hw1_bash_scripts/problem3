@@ -1,0 +1,14 @@
+#!/bin/bash
+# Rajesh Sakhamuru 5-15-19
+# Problem 3 Script
+# Script "problem3" takes a directory path as its first parameter and prints the number of
+# subdirectories directly contained within it.
+# Subdirectories that begin with '.' or '..' are ignored.
+# Template:
+#    bash problem3 /directory_path => # ---> prints the number of subdirectories
+#                                            directly within /directory_path
+# Examples: 
+#    bash problem3 /home => 1  (if there is only 1 user)
+#    bash problem3 /mnt/c/Users/rajes => 26  (26 sub-directories in /rajes)
+
+find ${*} -maxdepth 1 -mindepth 1 -name ".*" -prune -o -type d -print | wc -l

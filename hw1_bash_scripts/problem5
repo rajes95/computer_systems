@@ -1,0 +1,17 @@
+#!/bin/bash
+# Rajesh Sakhamuru 5-15-19
+# Problem 5 Script
+# Script "problem5" takes a date parameter of the format "2019-05-09" and prints
+# it as "May 9, 2019". 
+# Template:
+#    bash problem5 YEAR-MN-DY => Month DY, YEAR
+# Examples: 
+#    bash problem5 2019-05-09 => May 9, 2019
+#    bash problem5 1995-11-03 => November 3, 1995
+
+months=(January February March April May June July August September October November December)
+date=$(echo $* | tr "-" " ") 
+read year month day<<<"$date"
+if [ "${day:0:1}" == "0" ]; then day="${day:1}"; fi
+if [ "${month:0:1}" == "0" ]; then month="${month:1}"; fi
+printf "${months[$(($month-1))]} $day, $year\n"

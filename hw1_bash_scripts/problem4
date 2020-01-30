@@ -1,0 +1,13 @@
+#!/bin/bash
+# Rajesh Sakhamuru 5-15-19
+# Problem 4 Script
+# Script "problem4" takes zero or more numeric parameters and prints the sum of the values.
+# If no parameters are given, it prints 0.
+# Template:
+#    bash problem4 n1 n2 ... nn => sum ---> prints the sum of numbers n1 n2 ... nn
+# Examples: 
+#    bash problem4 1 2 3 4 => 10
+#    bash problem4 3 5 6 7 => 21
+
+sum=$(echo $* | tr ' ' '+')
+echo $(( sum ))

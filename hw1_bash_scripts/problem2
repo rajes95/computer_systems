@@ -1,0 +1,11 @@
+#!/bin/bash
+# Rajesh Sakhamuru 5-15-19
+# Problem 2 Script
+# Script "problem2" takes one or more numbers as command line parameters and prints the largest number
+# Template:
+#    bash problem2 n1 n2 ... nn => n# ---> prints the largest number of the given parameters
+# Examples: 
+#    bash problem2 1 2 4 3 => 4
+#    bash problem2 3.5 4.6 9.0 12.4 1.1 => 12.4
+
+printf '%s\n' "$@" | sort -nr | head -n 1

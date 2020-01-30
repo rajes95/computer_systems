@@ -1,0 +1,12 @@
+#!/bin/bash
+# Rajesh Sakhamuru 5-15-19
+# Problem 1 Script
+# Script "problem1" saves the 'man' page for the command specified by it's first parameter
+# whose file name is the command name followed by ".txt" saved into the current directory
+# Template:
+#    bash problem1 "command_name" => "command_name.txt" file w/ contents of command_name 'man' page
+# Examples: 
+#    bash problem1 cat => "cat.txt"
+#    bash problem1 ls => "ls.txt"
+
+man ${1} > ${1}.txt
